@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore MERN Stack</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <%- include('../partials/header') %>
+    <h1><%= post.title %></h1>
+
+    <p>
+        MERN stands for:
+
+       MongoDB + Express.js + React.js + Node.js
+
+       It’s a JavaScript-based full-stack development framework, meaning you can use JavaScript for
+        both front-end and back-end — all the way from database to UI.
+    </p>
+    
+    <section class="comment-section">
+    <h3>Leave a Comment</h3>
+    <form action="/pages/<%= post.id %>/comment" method="POST" class="comment-form">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+            <label for="comment">Comment:</label>
+            <textarea id="comment" name="comment" rows="4" required></textarea>
+        </div>
+        <button type="submit">Post Comment</button>
+    </form>
+
+    <% if (comments && comments.length > 0) { %>
+        <div class="comments-display">
+            <h4>Comments:</h4>
+            <ul>
+                <% comments.forEach(c => { %>
+                    <li><strong><%= c.name %>:</strong> <%= c.comment %></li>
+                <% }); %>
+            </ul>
+        </div>
+    <% } %>
+ </section>
+
+
+    <!-- footer -->
+    <%- include('../partials/footer') %>
+
+</body>
+</html>

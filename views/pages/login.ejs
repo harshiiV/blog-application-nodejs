@@ -1,0 +1,128 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Login | Blog App</title>
+  <link rel="stylesheet" href="/style.css" />
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #a2c2e0, #cde4f7);
+      font-family: "Poppins", sans-serif;
+    }
+
+    .login-container {
+      background-color: #ffffff;
+      padding: 40px 35px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .login-container h2 {
+      margin-bottom: 25px;
+      color: #2b4c7e;
+      font-size: 26px;
+      letter-spacing: 0.5px;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .input-group label {
+      font-weight: 600;
+      color: #2b4c7e;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      margin-top: 5px;
+    }
+
+    button {
+      background-color: #5ba4e6;
+      color: white;
+      padding: 10px 0;
+      border: none;
+      border-radius: 6px;
+      font-size: 17px;
+      width: 100%;
+      font-weight: 600;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #4a93d3;
+      transform: translateY(-1px);
+    }
+
+    .error {
+      color: #d32f2f;
+      margin-bottom: 15px;
+      font-weight: bold;
+      background: #ffeaea;
+      border: 1px solid #f5b5b5;
+      padding: 8px;
+      border-radius: 6px;
+    }
+
+    .extra-links {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .extra-links a {
+      color: #5ba4e6;
+      text-decoration: none;
+    }
+
+    .extra-links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Admin Login</h2>
+
+    
+
+    <form action="/login" method="POST">
+      <div class="input-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required />
+      </div>
+
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required />
+      </div>
+
+      <button type="submit">Login</button>
+    </form>
+
+    <div class="extra-links">
+      <p><a href="/">← Back to Home</a></p>
+    </div>
+  </div>
+</body>
+</html>

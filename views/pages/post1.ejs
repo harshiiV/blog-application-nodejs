@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning JavaScript</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <%- include('../partials/header') %>
+    <h1><%= post.title %></h1>
+     
+    <p>Learning JavaScript (JS) is an essential step for anyone aspiring to become a web developer.
+     It is the backbone of modern web development, bringing interactivity, logic, and functionality
+     to websites. JavaScript allows developers to make web pages dynamic — responding to user actions, 
+     updating content instantly, and communicating with servers without reloading the page. It is also 
+     the only programming language that runs natively in all web browsers, making it a universal skill. 
+     Beyond the browser, JavaScript powers back-end development through Node.js, and frameworks like React
+    , Angular, and Vue make it even more powerful for building complex user interfaces. By learning 
+    JavaScript, you open the door to full-stack development, creativity, and endless career opportunities
+     in the tech industry.</p>
+    
+
+    <section class="comment-section">
+    <h3>Leave a Comment</h3>
+    <form action="/pages/<%= post.id %>/comment" method="POST" class="comment-form">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+            <label for="comment">Comment:</label>
+            <textarea id="comment" name="comment" rows="4" required></textarea>
+        </div>
+        <button type="submit">Post Comment</button>
+    </form>
+
+    <% if (comments && comments.length > 0) { %>
+        <div class="comments-display">
+            <h4>Comments:</h4>
+            <ul>
+                <% comments.forEach(c => { %>
+                    <li><strong><%= c.name %>:</strong> <%= c.comment %></li>
+                <% }); %>
+            </ul>
+        </div>
+    <% } %>
+  </section>
+    
+     
+    <!-- footer -->
+    <%- include('../partials/footer') %>
+</body>
+</html>
