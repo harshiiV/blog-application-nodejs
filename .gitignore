@@ -1,0 +1,24 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Environment variables
+.env
+
+# Logs
+logs
+*.log
+logs/**/*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build folders (if any in future)
+dist/
+build/
+
+# Backup or temp files
+*.tmp
+*.bak
